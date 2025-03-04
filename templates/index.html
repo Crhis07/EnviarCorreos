@@ -1,51 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enviar Correo</title>
-    <link rel="stylesheet" href="../static/css/estilo.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../static/css/estilo.css" rel="stylesheet" />
+    <script src="../static/js/index.js"></script>
+    <title>Delfines de Molokai 262</title>
+  </head>
+  <body>
+    <div class="cabecera" id="logodelfin" align="left">
+      <a href="../templates/index.html"
+        ><img src="../static/Nosotros/logodelfin.png" height="150px" width="120px"
+      /></a>
 
+      <ul class="nav" align="right">
+        <li>
+          <a href="../templates/index.html">INICIO</a>
+        </li>
+        <li>
+          <a href="../templates/index.html">NOSOTROS</a>
+        </li>
+        <li>
+          <a href="">RAMAS ACTIVAS</a>
+          <ul>
+            <li><a href="">LOBATO</a></li>
+            <li><a href="">SCOUT</a></li>
+            <li><a href="">CAMINANTES</a></li>
+            <li><a href="">ROVER</a></li>
+          </ul>
+        </li>
+        <li><a href="">COLABORADORES</a></li>
+        <li><a href="../templates/contactanos.html">CONTACTO</a></li>
+      </ul>
+    </div>
 
-</head>
-<body>
-    <center>
-    <form method="POST" action="/">
-        <h2>Contactanos</h2>
-        <div class="input-group">
-            <label for="name">Nombre:</label>
-            <input type="name" id="name" name="name" required><br><br>
+    <div class="carousel">
+      <div class="carousel-images">
+        <img
+          class="carousel-image"
+          src="../static/Nosotros/desfile2023.jpg"
+          alt="Imagen 1"
+          width="500px"
+          height="500px"
+        />
+        <img
+          class="carousel-image"
+          src="../static/Nosotros/desfile2024.jpg"
+          alt="Imagen 2"
+          width="500px"
+          height="500px"
+        />
+        <img
+          class="carousel-image"
+          src="../static/Nosotros/desfile2023.jpg"
+          alt="Imagen 3"
+          width="500px"
+          height="500px"
+        />
+      </div>
+      <button class="btn btn-left" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="btn btn-right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-
-            <label for="phone">Telefono:</label>
-            <input type="tel" name="phone" id="phone" required><br><br>
-
-            <label for="message">Mensaje:</label><br>
-            <textarea id="message" name="message" rows="10" cols="30" required></textarea><br><br>
-            
-            <div class="form-txt">
-                <a href="#">Politica de Privacidad</a>
-                <a href="#">Terminos y Condiciones</a>
-            </div>
-            <input class="btn" type="submit" value="Enviar">
-        </div>
-        
-    </form>
-</center>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
-</body>
+    <div class="final"></div>
+  </body>
 </html>
-
-
-

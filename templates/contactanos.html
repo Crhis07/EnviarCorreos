@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACTO</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/estilo.css">
+
+
+</head>
+<body>
+    <center>
+    <form method="POST" action="/">
+        <h2>Contactanos</h2>
+        <div class="input-group">
+            <label for="name">Nombre:</label>
+            <input type="name" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Telefono:</label>
+            <input type="tel" name="phone" id="phone" required><br><br>
+
+            <label for="message">Mensaje:</label><br>
+            <textarea id="message" name="message" rows="10" cols="30" required></textarea><br><br>
+            
+            <div class="form-txt">
+                <a href="#">Politica de Privacidad</a>
+                <a href="#">Terminos y Condiciones</a>
+            </div>
+            <input class="btn" type="submit" value="Enviar">
+        </div>
+        
+    </form>
+</center>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
+
+
+
